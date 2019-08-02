@@ -11,5 +11,11 @@ router.get('/image', (req, res, next) =>
     .catch(next)
 );
 
+router.post('/image', (req, res, next) =>
+  Image.create(req.body)
+    .then(data => res.send(data))
+    .catch(next)
+);
+
 
 module.exports = router;
